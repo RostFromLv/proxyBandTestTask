@@ -1,0 +1,21 @@
+package com.test.proxybandtesttask.config;
+
+import com.test.proxybandtesttask.mapper.NoteMapper;
+import com.test.proxybandtesttask.mapper.UserMapper;
+import org.mapstruct.factory.Mappers;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class Configurations {
+
+  @Bean
+  public UserMapper userMapper() {
+    return Mappers.getMapper(UserMapper.class);
+  }
+
+  @Bean
+  public NoteMapper noteMapper() {
+    return Mappers.getMapper(NoteMapper.class);
+  }
+}
